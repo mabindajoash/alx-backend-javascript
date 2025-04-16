@@ -1,5 +1,5 @@
-export default function() {
-  return new Promise((resolve, reject) => {
-    resolve("success!");
+export default function () {
+  return new Promise((resolve) => {
+    resolve('success!');
   });
 }
