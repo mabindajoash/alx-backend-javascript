@@ -20,7 +20,10 @@ export default class ALXCourse {
   }
 
   set length(length) {
-    this.length = length;
+    if (typeof length !== 'number') {
+      throw new TypeError('length must be a number');
+    }
+    this._length = length;
   }
 
   get length() {
@@ -28,6 +31,9 @@ export default class ALXCourse {
   }
 
   set name(name) {
+    if (typeof name !== 'string') {
+      throw new TypeError('name must be a string');
+    }
     this._name = name;
   }
 
@@ -36,6 +42,9 @@ export default class ALXCourse {
   }
 
   set students(students) {
+    if (!Array.isArray(students) || !students.every((student) => typeof student === 'string')) {
+      throw new TypeError('Not an array or array items not a string');
+    }
     this._students = students;
   }
 }
